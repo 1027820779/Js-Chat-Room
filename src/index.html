@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style text="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	body{
+		background: #2b3140;
+	}
+	#box{
+		width: 550px;
+		height: 600px;
+		margin: 40px auto;
+	}
+	.title{
+	width: 550px;
+	height: 60px;
+	background: #26ba60;
+	text-align: center;
+	line-height: 60px;
+	color: white;
+	font-size: 24px;
+	}
+	.content_box{
+	width: 550px;
+	height: 500px;
+	background: url(bg.png);
+	background-size: 550px 500px;
+	overflow: auto;
+	}
+	.benren{
+    float: right;
+    width: 500px;
+    padding-right: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	}
+	.b_touxiang{
+    width: 60px;
+    height: 60px;
+    background: url(b_t.jpg);
+    float: right;
+    background-size: 57px 60px;
+    border-radius: 100%;
+    border: 2px solid #26BA60;
+	}
+	.b_maz{
+    float: right;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.68);
+    margin-top: 15px;
+    margin-right: 5px;
+    line-height: 30px;
+    border-radius: 3px;
+    padding-left: 5px;
+    color: rgba(43, 49, 64, 0.72);
+    font-size: 14px;
+    padding-right: 5px;
+	}
+	.jiqi{
+    float: left;
+    width: 500px;
+    padding-left: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	}
+	.j_touxiang{
+    width: 60px;
+    height: 60px;
+    background: url(j_t.jpg);
+    float: left;
+    border-radius: 100%;
+    border: 2px solid #26BA60;
+    background-size: 60px 60px;
+	}
+	.j_maz{
+    float: left;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.68);
+    margin-top: 15px;
+    margin-left: 5px;
+    line-height: 30px;
+    border-radius: 3px;
+    padding-left: 5px;
+    color: rgba(43, 49, 64, 0.72);
+    font-size: 14px;
+    padding-right: 5px;
+	}
+	.input_box{
+    width: 548px;
+    height: 44px;
+    background: #FA6041;
+    border-left: 2px solid #FA6041
+	}
+	#inp{
+    width: 442px;
+    height: 40px;
+    outline: none;
+    border: none;
+    background: white;
+    color: #aaadb3;
+    float: left;
+    font-size: 14px;
+    text-indent: 10px;
+    margin-top: 2px;
+	}
+	#sub{
+    width: 106px;
+    height: 40px;
+    outline: none;
+    border: 0;
+    background: #fa6041;
+    color: white;
+    font-size: 19px;
+    cursor: pointer;
+    margin-top: 2px;
+	}
+
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+	    var content_box = document.getElementById('content_box');
+	    var inp = document.getElementById('inp');
+	    var sub = document.getElementById('sub');
+	    sub.onclick=function(){
+	    	var val=inp.value;
+	    	// 如果没有内容，替换掉点
+	    	if(val==""){
+	    		val="...";
+	    	}
+	    	// 创建元素，设置属性
+			var benren= document.createElement("div");
+			benren.setAttribute("class","benren");
+			content_box.appendChild(benren);
+
+			var b_touxiang= document.createElement("div");
+			b_touxiang.setAttribute("class","b_touxiang");
+			benren.appendChild(b_touxiang);
+
+			var b_maz= document.createElement("div");
+			b_maz.setAttribute("class","b_maz");
+			b_maz.innerHTML=val;
+			benren.appendChild(b_maz);
+
+			// 机器自动回复功能
+			var arr=new Array();
+			arr[0]="我根本听不懂你在说什么！";
+			arr[1]="你说这种话很容易挨揍知道吗！";
+			arr[2]="我很羡慕有故事的人，不像我帅一个字贯穿了我的人生！";
+			arr[3]="你这话说的很有道理的样子。";
+			arr[4]="果然人外有人，逼外有逼，在下还是太年轻了！";
+			arr[5]="你怎么可以这么说。";
+			arr[6]="你别乱说好吗！";
+			arr[7]="有一个屌丝，长的很像你！";
+			arr[8]="这个话我早就听过！";
+            arr[9]="我又不是你爹！";
+            arr[10]="你这种人在电视剧里最多活两集！";
+            arr[11]="人长得丑多多读书知道吗！";
+            arr[12]="我读少你可别骗我！";
+            arr[13]="你要是承认自己是傻逼我就放过你！";
+            arr[14]="我就喜欢你这个装逼的朋友";
+            arr[15]="骚年，你还要继续装逼吗";
+            arr[16]="上帝都是公平的，虽然你长得丑，但你想得美啊！";
+            arr[17]="楼上绝对有病，绝对有病";
+            arr[18]="不行你的智商太低 这样传下去会走火入摩的！";
+            arr[19]="你这样说我就不高兴了！";
+            arr[20]="信不信我一板砖拍死你！";
+			var r_num=Math.floor(Math.random()*21);
+
+			var jiqi= document.createElement("div");
+			jiqi.setAttribute("class","jiqi");
+			content_box.appendChild(jiqi);
+
+			var j_touxiang= document.createElement("div");
+			j_touxiang.setAttribute("class","j_touxiang");
+			jiqi.appendChild(j_touxiang);
+
+			var j_maz= document.createElement("div");
+			j_maz.setAttribute("class","j_maz");
+			j_maz.innerHTML=arr[r_num];
+			jiqi.appendChild(j_maz);
+
+			// 输入框清除
+			inp.value="";
+	    }
+
+	}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<div class="title">脑残聊天室</div>
+		<div class="content_box" id="content_box">
+			<div class="benren" >
+				<div class="b_touxiang"></div>
+				<div class="b_maz">你好！</div>
+			</div>
+			<div class="jiqi" >
+				<div class="j_touxiang"></div>
+				<div class="j_maz">你好！欢迎来到脑残聊天室！</div>
+			</div>
+		</div>
+		<div class="input_box">
+			<input id="inp" type="text" placeholder="你在想什么呀" />
+			<input id="sub" type="submit" value="发送" />
+		</div>
+	</div>
+</body>
+</html>
